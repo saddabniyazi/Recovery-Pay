@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const mongoose = require("mongoose");
 const app = require("./app");
 const connectDB = require("./config/db");
 
@@ -14,6 +15,7 @@ const startServer = async () => {
 
     app.listen(PORT, () => {
         console.log(` Server running on http://localhost:${PORT}`);
+         console.log("Mongoose Ready State:", mongoose.connection.readyState);
     });
 
 };

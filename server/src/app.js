@@ -1,4 +1,6 @@
 const authRoutes = require("./routes/auth.routes");
+const subscriptionRoutes = require("./routes/subscription.routes");
+const customerRoutes = require("./routes/customer.routes");
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -28,5 +30,6 @@ app.get("/api/profile", protect, (req, res) => {
 
 });
 app.use("/api/auth", authRoutes);
-
+app.use("/api/customers", customerRoutes);
+app.use("/api/subscriptions", subscriptionRoutes);
 module.exports = app;
