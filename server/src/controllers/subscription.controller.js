@@ -1,7 +1,6 @@
 const Subscription = require("../models/Subscription");
 const Customer = require("../models/Customer");
 
-// Create Subscription
 const createSubscription = async (req, res) => {
   try {
     const {

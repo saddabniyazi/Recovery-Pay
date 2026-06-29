@@ -5,7 +5,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const protect = require("./middleware/auth.middleware");
-
+const paymentRoutes = require("./routes/payment.routes");
+const retryRoutes = require("./routes/retry.routes");
 const app = express();
 
 app.use(cors());
@@ -32,4 +33,6 @@ app.get("/api/profile", protect, (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/subscriptions", subscriptionRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/retries", retryRoutes);
 module.exports = app;
